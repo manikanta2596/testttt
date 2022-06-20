@@ -1,0 +1,28 @@
+1.git checkout Manikanta (# Command for Create new branch with my name)
+3.sample heloworld.html file (#save as name ==>index.html)
+
+<html>
+ <head>
+ </head>
+ <body>
+   <h1>Hello World<h1>
+ </body>
+</html>
+
+
+
+
+
+Dockerfile:
+-------------
+FROM : tomcat
+WORKDIR /usr/local/tomcat/webapps/ROOT
+COPY index.html .
+EXPOSE 3111
+
+
+# Create docker image based on Dockerfile
+$ docker build -t image1 -f Dockerfile .
+
+# Create docker container from the image i have created 
+$ docker run -d --name c1 -p 3111:8080 image1
